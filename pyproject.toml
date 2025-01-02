@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2025 Yansheng Wang <ywang889@gmail.com>
+#
+# SPDX-License-Identifier: Apache-2.0
+
+[tool.poetry]
+name = "common-sipi-tools"
+version = "0.1.0"
+description = "Commonly used simple tools for signal integrity (SI) and power integrity (PI) work"
+authors = ["Yansheng Wang"]
+license = "Apache-2.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+numpy = "^2.2.0"
+matplotlib = "^3.10.0"
+reuse = "^5.0.2"
+pre-commit = "^4.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
