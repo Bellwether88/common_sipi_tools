@@ -4,7 +4,7 @@
 
 """
 Author: Wang, Yansheng
-Last updated on Dec. 28, 2024
+Last updated on Jan. 8, 2025
 
 Description:
     This module is to complete PWL linear operations.
@@ -17,6 +17,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 from common_sipi_tools.util.common import list_strip, txtfile_rd, txtfile_wr
+from common_sipi_tools.util.common_engr import (
+    check_if_scale_exist,
+    convert_value_w_scale,
+)
 
 
 def pwl_read(
@@ -32,7 +36,17 @@ def pwl_read(
     for _ in range(ignore_end_line):
         ctnt_list.pop(-1)
     # remove symbol and make it list of list
-    ctnt_lol = [item.lstrip(ignore_symbol).split() for item in ctnt_list]
+    ctnt_lol_tmp = [item.lstrip(ignore_symbol).split() for item in ctnt_list]
+    # check if scale exist
+    scale_exist = check_if_scale_exist("".join(ctnt_list))
+    # convert scale to sci expression if it exists
+    if scale_exist:
+        ctnt_lol = [
+            [convert_value_w_scale(item[0]), convert_value_w_scale(item[1])]
+            for item in ctnt_lol_tmp
+        ]
+    else:
+        ctnt_lol = ctnt_lol_tmp
     # convert to float type and scale to the right unit
     ctnt_arr = np.array(ctnt_lol)
     float_arr = ctnt_arr.astype(np.float64)
@@ -43,9 +57,7 @@ def pwl_read(
     return float_arr
 
 
-def pwl_write(
-    file_dir, float_arr, headline="# s A", pwl_def=None, footline="", add_symbol="+"
-):
+def pwl_write(file_dir, float_arr, headline="# s A", pwl_def=None, add_symbol="+"):
     """Write out PWL files."""
     float_lol = float_arr.tolist()
     str_lst = [f"{add_symbol} {item[0]:.9e} {item[1]:.9e}" for item in float_lol]
@@ -53,8 +65,10 @@ def pwl_write(
     if pwl_def is None:
         str_lst[0] = str_lst[0].lstrip(add_symbol).lstrip()
         pwl_def = ""
+        footline = ""
     else:
-        pwl_def = pwl_def + "\n"
+        pwl_def = pwl_def + " pwl(\n"
+        footline = ")"
     ctnt = headline + "\n" + pwl_def + "\n".join(str_lst) + footline
     txtfile_wr(file_dir, ctnt)
 
@@ -155,22 +169,33 @@ def pwl_repeat_till_stoptime(float_arr_in, stop_time, gap=None):
 
 
 def pwl_extension_by_repeating(
-    float_arr_in,
-    stop_time,
-    delay=0,
-    keep_head="YES",
-    clip_start=None,
-    clip_end=None,
-    gap=None,
-    delay_value=None,
-    stop_value=None,
+    float_arr_in, stop_time, clip_config=None, repeat_config=None, extension_config=None
 ):
     """Customize the profile by repeating."""
-    # clip
-    if clip_start is None:
+    # config
+    if clip_config is None:
         clip_start = float_arr_in[0][0]
-    if clip_end is None:
         clip_end = float_arr_in[-1][0]
+    else:
+        clip_start = clip_config["clip_start"]
+        clip_end = clip_config["clip_end"]
+
+    if repeat_config is None:
+        keep_head = "YES"
+        gap = None
+    else:
+        keep_head = repeat_config["keep_head"]
+        gap = repeat_config["gap"]
+
+    if extension_config is None:
+        delay = 0
+        delay_value = None
+        stop_value = None
+    else:
+        delay = extension_config["delay"]
+        delay_value = extension_config["delay_value"]
+        stop_value = extension_config["stop_value"]
+    # clip
     float_arr_clip, float_arr_pre, _ = pwl_cut(float_arr_in, clip_start, clip_end)
     # renormalize time range
     float_arr_clip[:, 0] = float_arr_clip[:, 0] - float_arr_clip[0, 0]
