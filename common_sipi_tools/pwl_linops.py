@@ -115,9 +115,15 @@ def pwl_mod_time(float_arr_in, stop_time, delay=0, stop_value=None, delay_value=
         float_arr_out = np.array([[0, begin_value], [stop_time, begin_value]])
     elif stop_time <= delay + duration:
         float_arr_out_temp = float_arr_dt[float_arr_dt[:, 0] <= stop_time, :]
-        float_arr_out = np.insert(float_arr_out_temp, 0, float_vec_start, axis=0)
+        if delay > 0:
+            float_arr_out = np.insert(float_arr_out_temp, 0, float_vec_start, axis=0)
+        else:
+            float_arr_out = float_arr_out_temp
     else:
-        float_arr_out = np.insert(float_arr_dt, 0, float_vec_start, axis=0)
+        if delay > 0:
+            float_arr_out = np.insert(float_arr_dt, 0, float_vec_start, axis=0)
+        else:
+            float_arr_out = float_arr_dt
         float_arr_out = np.append(float_arr_out, [float_vec_end], axis=0)
     return float_arr_out
 
@@ -174,11 +180,15 @@ def pwl_extension_by_repeating(
     """Customize the profile by repeating."""
     # config
     if clip_config is None:
-        clip_start = float_arr_in[0][0]
-        clip_end = float_arr_in[-1][0]
+        clip_start = None
+        clip_end = None
     else:
         clip_start = clip_config["clip_start"]
         clip_end = clip_config["clip_end"]
+    if clip_start is None:
+        clip_start = float_arr_in[0][0]
+    if clip_end is None:
+        clip_end = float_arr_in[-1][0]
 
     if repeat_config is None:
         keep_head = "YES"
