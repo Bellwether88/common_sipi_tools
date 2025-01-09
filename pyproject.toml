@@ -4,7 +4,7 @@
 
 [tool.poetry]
 name = "common-sipi-tools"
-version = "0.1.1"
+version = "0.1.2"
 description = "Commonly used simple tools for signal integrity (SI) and power integrity (PI) work"
 authors = ["Yansheng Wang"]
 license = "Apache-2.0"
