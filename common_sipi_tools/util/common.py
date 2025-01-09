@@ -4,26 +4,24 @@
 
 """
 Author: Wang, Yansheng
-Last updated on Dec. 18, 2024
+Last updated on Jan. 8, 2025
 
 Description:
     All commonly used basic functions.
 """
 
 
-def txtfile_rd(dir):
+def txtfile_rd(dir_in):
     """read a text file"""
-    file = open(dir)
-    ctnt = file.read()
-    file.close()
+    with open(dir_in, encoding="utf-8") as file:
+        ctnt = file.read()
     return ctnt
 
 
-def txtfile_wr(dir, ctnt):
+def txtfile_wr(dir_in, ctnt):
     """write a text file"""
-    file = open(dir, "w")
-    file.write(ctnt)
-    file.close()
+    with open(dir_in, "w", encoding="utf-8") as file:
+        file.write(ctnt)
 
 
 def list_strip(in_list):
