@@ -244,3 +244,23 @@ def pwl_catenation(float_arr_in1, float_arr_in2, gap=None):
             float_arr_in2[:, 0] = float_arr_in2[:, 0] + float_arr_in1[-1, 0] + gap
             float_arr_out = np.append(float_arr_in1, float_arr_in2, axis=0)
     return float_arr_out
+
+
+def pwl_interpolation(float_arr_in, new_time, left=None, right=None):
+    """Interpolate PWL."""
+    float_arr_out = np.empty((new_time.size, 2))
+    float_arr_out[:, 0] = new_time
+    float_arr_out[:, 1] = np.interp(
+        new_time, float_arr_in[:, 0], float_arr_in[:, 1], left, right
+    )
+    return float_arr_out
+
+
+def pwl_addition(float_arr_in1, float_arr_in2):
+    """Add up two PWLs based on the time defined in the 1st PWL."""
+    float_arr_in2_interp = pwl_interpolation(
+        float_arr_in2, float_arr_in1[:, 0], left=0, right=0
+    )
+    float_arr_out = float_arr_in1.copy()
+    float_arr_out[:, 1] = float_arr_in1[:, 1] + float_arr_in2_interp[:, 1]
+    return float_arr_out
