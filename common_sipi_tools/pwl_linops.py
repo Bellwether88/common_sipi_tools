@@ -332,7 +332,7 @@ def pwl_extension_by_repeating(
         clip_end = float_arr_in[-1][0]
 
     if repeat_config is None:
-        keep_head = "YES"
+        keep_head = True
         gap = None
     else:
         keep_head = repeat_config["keep_head"]
@@ -355,7 +355,7 @@ def pwl_extension_by_repeating(
     else:
         float_arr_pre[:, 0] = float_arr_pre[:, 0] - float_arr_pre[0, 0]
         duration_pre = float_arr_pre[-1, 0] - float_arr_pre[0, 0]
-    if keep_head.upper() != "YES":
+    if keep_head is False:
         float_arr_pre = np.array([[]])
         duration_pre = 0
     # repeat the clip
