@@ -16,6 +16,7 @@ numpy = "^2.2.0"
 matplotlib = "^3.10.0"
 reuse = "^5.0.2"
 pre-commit = "^4.0.1"
+mkdocstrings-python = "^1.13.0"
 
 
 [build-system]
