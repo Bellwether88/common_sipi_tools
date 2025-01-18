@@ -12,4 +12,5 @@ plugins:
   - mkdocstrings
 
 nav:
+  - home: index.md
   - pwl_linops: pwl_linops.md
