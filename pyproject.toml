@@ -17,6 +17,8 @@ matplotlib = "^3.10.0"
 reuse = "^5.0.2"
 pre-commit = "^4.0.1"
 mkdocstrings-python = "^1.13.0"
+mkdocs = "^1.6.1"
+mkdocs-material = "^9.5.49"
 
 
 [build-system]

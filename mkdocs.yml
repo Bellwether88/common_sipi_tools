@@ -12,4 +12,4 @@ plugins:
   - mkdocstrings
 
 nav:
-  - "PWL Linear Operations": pwl_linopes.md
+  - pwl_linops: pwl_linops.md
