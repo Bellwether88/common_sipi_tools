@@ -3,15 +3,12 @@
 # SPDX-License-Identifier: Apache-2.0
 
 # Byte-compiled / optimized / DLL files
-__pycache__/
+*/__pycache__/
 *.py[cod]
 *$py.class
 
 # Mac
 *.DS_Store
-# common_sipi_tools/.DS_Store
-# common_sipi_tools/__pycache__/__init__.cpython-312.pyc
-# common_sipi_tools/util/__pycache__/*.cpython-312.pyc
 
 # Project specific
 data/
@@ -152,7 +149,7 @@ venv.bak/
 .ropeproject
 
 # mkdocs documentation
-# /site
+site/
 
 # mypy
 .mypy_cache/
