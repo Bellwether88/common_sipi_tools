@@ -11,16 +11,16 @@
       
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
     
     
       
-        <title>Common SIPI Tools</title>
+        <title>Pwl linops example - Common SIPI Tools</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
       
       
 
@@ -39,9 +39,9 @@
       
     
     
-      <link rel="stylesheet" href="/assets/_mkdocstrings.css">
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -59,6 +59,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#examples" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -71,7 +76,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Common SIPI Tools" class="md-header__button md-logo" aria-label="Common SIPI Tools" data-md-component="logo">
+    <a href=".." title="Common SIPI Tools" class="md-header__button md-logo" aria-label="Common SIPI Tools" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -91,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Pwl linops example
             
           </span>
         </div>
@@ -166,7 +171,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Common SIPI Tools" class="md-nav__button md-logo" aria-label="Common SIPI Tools" data-md-component="logo">
+    <a href=".." title="Common SIPI Tools" class="md-nav__button md-logo" aria-label="Common SIPI Tools" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -184,7 +189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -204,7 +209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/tutorials/" class="md-nav__link">
+      <a href="../tutorials/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -224,7 +229,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/how_to_guides/" class="md-nav__link">
+      <a href="../how_to_guides/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -244,7 +249,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/reference/" class="md-nav__link">
+      <a href="../reference/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -264,7 +269,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/explanation/" class="md-nav__link">
+      <a href="../explanation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -295,6 +300,23 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      Examples
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -305,8 +327,139 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  <h1>Pwl linops example</h1>
+
+<!--
+SPDX-FileCopyrightText: 2025 Yansheng Wang <ywang889@gmail.com>
+
+SPDX-License-Identifier: Apache-2.0
+-->
+
+<h2 id="examples">Examples</h2>
+<ul>
+<li>Example 1</li>
+</ul>
+<p>PWL extension, scale, and catenation.</p>
+<pre><code class="language-python">from common_sipi_tools.pwl_linops import (
+    pwl_read,
+    pwl_write,
+    pwl_plot,
+    pwl_scale_amp,
+    pwl_mod_time,
+    pwl_cut,
+    pwl_repeat_times,
+    pwl_repeat_till_stoptime,
+    pwl_catenation,
+    pwl_extension_by_repeating,
+)
+
+# read in PWL files
+DIR1 = &quot;data/PWL/data1.pwl&quot;
+ctnt1 = pwl_read(DIR1, skip_start_line=1)
+pwl_plot(ctnt1)
+
+DIR2 = &quot;data/PWL/data2.pwl&quot;
+ctnt2 = pwl_read(DIR2, skip_start_line=1)
+pwl_plot(ctnt2)
+
+# scale by 2
+ctnt3 = pwl_scale_amp(ctnt1, 2)
+pwl_plot(ctnt3)
+
+# modify time range
+ctnt4 = pwl_mod_time(ctnt1, 4e-6, delay=2e-6)
+pwl_plot(ctnt4)
+
+# cut a slice of pwl
+ctnt5, _, _ = pwl_cut(ctnt1, 6.4e-7, 6.8e-7)
+pwl_plot(ctnt5)
+
+# repeat 1 time pwl
+ctnt6 = pwl_repeat_times(ctnt1, 1)
+pwl_plot(ctnt6)
+
+# repeat till stop time
+ctnt7 = pwl_repeat_till_stoptime(ctnt1, 4e-6)
+pwl_plot(ctnt7)
+
+# catenate two PWLs
+ctnt8 = pwl_catenation(ctnt1, ctnt2)
+pwl_plot(ctnt8)
+
+# extend by repeating
+ctnt9 = pwl_extension_by_repeating(ctnt1, 4e-6)
+pwl_plot(ctnt9)
+
+OUT_DIR = &quot;tests/results/out_pwl.pwl&quot;
+pwl_write(OUT_DIR, ctnt9)
+</code></pre>
+<ul>
+<li>Example 2</li>
+</ul>
+<p>PWL interpolation.</p>
+<pre><code class="language-python">import numpy as np
+from common_sipi_tools.pwl_linops import pwl_read, pwl_plot, pwl_interpolation
+
+
+pwl_path = &quot;data/PWL/&quot;
+pwl_name = &quot;data4&quot;
+pwl_dir_in = pwl_path+pwl_name+&quot;.pwl&quot;
+pwl_dir_out = pwl_path+pwl_name+&quot;_out.pwl&quot;
+
+# read in PWL file
+ctnt_in = pwl_read(pwl_dir_in, skip_start_line=1, ignore_end_line=0)
+pwl_plot(ctnt_in)
+
+# new time samples
+start_time = 0
+end_time = 15e-9
+step = 250e-12
+pts = round((end_time-start_time)/step)+1
+new_time = np.linspace(start_time, end_time, pts, endpoint=True)
+# interpolation
+ctnt_out = pwl_interpolation(ctnt_in, new_time, left=0, right=0)
+pwl_plot(ctnt_out)
+</code></pre>
+<ul>
+<li>Example 3</li>
+</ul>
+<p>PWL addition.</p>
+<pre><code class="language-python">from common_sipi_tools.pwl_linops import pwl_read, pwl_plot, pwl_addition
+
+pwl_path = &quot;data/PWL/&quot;
+pwl_name1 = &quot;data4&quot;
+pwl_name2 = &quot;data5&quot;
+pwl_dir_in1 = pwl_path+pwl_name1+&quot;.pwl&quot;
+pwl_dir_in2 = pwl_path+pwl_name2+&quot;.pwl&quot;
+pwl_dir_out = pwl_path+pwl_name1+&quot;_out.pwl&quot;
+
+# read in PWL files
+ctnt_in1 = pwl_read(pwl_dir_in1, skip_start_line=1, ignore_end_line=0)
+pwl_plot(ctnt_in1)
+
+ctnt_in2 = pwl_read(pwl_dir_in2, skip_start_line=1, ignore_end_line=0)
+pwl_plot(ctnt_in2)
+
+# PWL addition based on the 1st PWL time samples
+ctnt_out = pwl_addition(ctnt_in1, ctnt_in2)
+pwl_plot(ctnt_out)
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -340,10 +493,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": [], "search": "/assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      <script src="../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
     
   </body>
