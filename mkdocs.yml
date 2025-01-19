@@ -12,5 +12,8 @@ plugins:
   - mkdocstrings
 
 nav:
-  - home: index.md
-  - pwl_linops: pwl_linops.md
+  - Home: index.md
+  - Tutorials: tutorials.md
+  - How-to Guides: how_to_guides.md
+  - Reference: reference.md
+  - Explanation: explanation.md
